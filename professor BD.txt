@@ -1,0 +1,16 @@
+
+create table professor_bk_insert
+(id_prof int  not null primary key,
+id_cur int not null,
+nm_prof varchar  (50) not null,
+tt_hs_prof int not null,
+vl_hora_prof numeric (7,2) not null);
+go
+
+create table professor_bk_delete
+(id_prof int  not null primary key,
+id_cur int not null,
+nm_prof varchar  (50) not null,
+tt_hs_prof int not null,
+vl_hora_prof numeric (7,2) not null);
+go

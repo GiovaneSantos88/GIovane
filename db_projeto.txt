@@ -1,0 +1,55 @@
+create database projeto_compra;
+go
+
+
+use projeto_compra;
+go
+
+ create table cliente
+   (id_cliente  int      identity (1,1) not null primary key,
+   nom_cliente VARCHAR (50) NOT NULL,
+   end_cliente	VARCHAR (60));
+   go
+
+   create table compra
+   (id_compra int  identity not null primary key,
+   id_cliente int  not null,
+   vl_compra numeric(7,2) not null,
+   dt_compra date not null,
+    Constraint compra_id_cliente_fk foreign key (id_cliente) references cliente);
+	go
+
+	insert into cliente 
+	values ('Maria', 'Rua floriang, 20'),
+			('jose', 'Rua Alcatara, 113'),
+			('Carlos', 'Av. Tiradentes, 10'),
+			('Josefina' , 'Trav Clara Camarao, 25');
+
+select * from cliente;
+
+	insert into compra 
+	values (5020.20, 1, '2017-10-01'),
+			(3510.55, 2,'2017-10-01'),
+			(1000.00, 1,'2017-10-30'),
+			(1200.10, 4,'2017-11-01'),
+			(8000.00, 1,'2017-11-02');
+
+
+		select * from compra;
+
+
+
+
+
+	SELECT * FROM cliente;
+
+	SELECT * FROM compra
+
+	sp_help cliente;
+go
+
+sp_help compra;
+go
+
+
+drop database projeto_compra
